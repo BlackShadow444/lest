@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INTAE – Clases de Informática</title>
+
+  <!-- Fuente Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Estilos globales -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="header">
+    <div class="menu container">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" class="logo-img" alt="INTAE">
+        INTAE
+      </a>
+
+      <input type="checkbox" id="menu-toggle">
+      <label for="menu-toggle" class="hamburguer">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="navbar">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+
+          <li class="drop">
+            <a href="#" class="submenu-toggle">Oferta académica ▾</a>
+            <ul class="dropdown">
+              <li><a href="clases.html">Clases</a></li>
+              <li><a href="programa.html">Programas que usamos</a></li>
+            </ul>
+          </li>
+
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== LISTA DE CLASES ===== -->
+  <section class="clases" style="padding-top:120px"> <!-- padding-top p/ compensar navbar fija -->
+    <div class="container">
+      <h2>Nuestras Clases</h2>
+
+      <div class="class-list">
+
+        <article class="class-card acc">
+          <header>
+            <img src="images/gestion.svg" class="class-icon" alt="">
+            <h3>Gestión empresarial</h3>
+            <button class="acc-toggle">+</button>
+          </header>
+          <p class="acc-body">
+            Aprende a usar software de contabilidad, hojas de cálculo avanzadas
+            y herramientas de planificación para optimizar procesos y tomar
+            decisiones informadas.
+          </p>
+        </article>
+
+        <article class="class-card acc">
+          <header>
+            <img src="images/programacion.svg" class="class-icon" alt="">
+            <h3>Programación</h3>
+            <button class="acc-toggle">+</button>
+          </header>
+          <p class="acc-body">
+            Domina la lógica, estructuras de datos y crea tus primeras
+            aplicaciones con Python y JavaScript mientras desarrollas
+            pensamiento computacional.
+          </p>
+        </article>
+
+        <article class="class-card acc">
+          <header>
+            <img src="images/mantenimiento.svg" class="class-icon" alt="">
+            <h3>Mantenimiento de Hardware</h3>
+            <button class="acc-toggle">+</button>
+          </header>
+          <p class="acc-body">
+            Diagnóstico, reparación y actualización de componentes internos.
+            Aprenderás a ensamblar PCs y mantener periféricos en óptimo estado.
+          </p>
+        </article>
+
+        <article class="class-card acc">
+          <header>
+            <img src="images/digital.svg" class="class-icon" alt="">
+            <h3>Producciones Digitales</h3>
+            <button class="acc-toggle">+</button>
+          </header>
+          <p class="acc-body">
+            Diseño gráfico, edición de video y creación de contenido multimedia
+            utilizando suites líderes como Adobe Creative Cloud.
+          </p>
+        </article>
+
+        <article class="class-card acc">
+          <header>
+            <img src="images/web.svg" class="class-icon" alt="">
+            <h3>Desarrollo Web</h3>
+            <button class="acc-toggle">+</button>
+          </header>
+          <p class="acc-body">
+            Construye sitios responsivos con HTML, CSS, JavaScript y frameworks
+            modernos; implementa buenas prácticas de accesibilidad y SEO.
+          </p>
+        </article>
+
+        <article class="class-card acc">
+          <header>
+            <img src="images/redes.svg" class="class-icon" alt="">
+            <h3>Redes informáticas</h3>
+            <button class="acc-toggle">+</button>
+          </header>
+          <p class="acc-body">
+            Configura y asegura redes cableadas e inalámbricas, practica con
+            topologías, VLANs y herramientas de diagnóstico.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SCRIPT ACORDEÓN ===== -->
+  <script>
+    document.querySelectorAll('.acc').forEach(card => {
+      const header = card.querySelector('header');
+      const btn    = card.querySelector('.acc-toggle');
+
+      header.addEventListener('click', () => {
+        card.classList.toggle('open');
+        btn.textContent = card.classList.contains('open') ? '−' : '+';
+      });
+    });
+  </script>
+
+   <!-- ===== FOOTER SIMPLE ===== -->
+   <footer class="footer-mini">
+    <div class="container">
+      <p>&copy; 2025 INTAE – Carrera de Informática</p>
+    </div>
+  </footer>
+
+</body>
+</html>

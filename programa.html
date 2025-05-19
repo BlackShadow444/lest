@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INTAE – Programas y Lenguajes</title>
+
+  <!-- Fuente y estilos globales -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="header">
+    <div class="menu container">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" class="logo-img" alt="INTAE" />
+        INTAE
+      </a>
+
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" class="hamburguer">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="navbar">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+
+          <li class="drop">
+            <a href="#" class="submenu-toggle">Oferta académica ▾</a>
+            <ul class="dropdown">
+              <li><a href="clases.html">Clases</a></li>
+              <li><a href="programa.html">Programas que usamos</a></li>
+            </ul>
+          </li>
+
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- ===== PROGRAMAS ===== -->
+  <section class="tools">
+    <div class="container">
+      <h2>Programas de Desarrollo y Diseño</h2>
+
+      <div class="flip-grid">
+        
+        <!-- VS Code -->
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="images/VSCODE.ico" alt="VS Code" />
+              <h3>Visual Studio Code</h3>
+            </div>
+            <div class="flip-back">
+              <p>Editor ligero, extensiones infinitas y depuración integrada para múltiples lenguajes.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Studio Community -->
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="images/VS.ico" alt="Visual Studio" />
+              <h3>Visual Studio Community</h3>
+            </div>
+            <div class="flip-back">
+              <p>IDE completo para proyectos .NET, C#, desarrollo de escritorio, móvil y web.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Illustrator -->
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="images/ADOBEI.ico" alt="Illustrator" />
+              <h3>Adobe Illustrator</h3>
+            </div>
+            <div class="flip-back">
+              <p>Creación de logotipos, iconos y gráficos vectoriales profesionales.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photoshop -->
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="images/digital.svg" alt="Photoshop" />
+              <h3>Adobe Photoshop</h3>
+            </div>
+            <div class="flip-back">
+              <p>Edición y retoque de imágenes para proyectos web y multimedia.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloc de notas -->
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="images/bloc_notes_21874.ico" alt="Bloc de notas" />
+              <h3>Bloc de notas</h3>
+            </div>
+            <div class="flip-back">
+              <p>La herramienta más simple para empezar a escribir código HTML o scripts rápidos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LENGUAJES ===== -->
+  <section class="languages">
+    <div class="container">
+      <h2>Lenguajes que aprenderás</h2>
+
+      <div class="flip-grid">
+        
+        <!-- HTML -->
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="images/html.ico" alt="HTML" />
+              <h3>HTML</h3>
+            </div>
+            <div class="flip-back">
+              <p>El esqueleto de la web. Estructura tus páginas con etiquetas semánticas.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Java -->
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="images/java.ico" alt="Java" />
+              <h3>Java</h3>
+            </div>
+            <div class="flip-back">
+              <p>Programación orientada a objetos para aplicaciones de escritorio, web y móviles.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- C# -->
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="images/csharp.ico" alt="C#" />
+              <h3>C#</h3>
+            </div>
+            <div class="flip-back">
+              <p>Lenguaje potente dentro del ecosistema .NET para juegos, servicios y apps empresariales.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER SIMPLE ===== -->
+  <footer class="footer-mini">
+    <div class="container">
+      <p>&copy; 2025 INTAE – Carrera de Informática</p>
+    </div>
+  </footer>
+
+</body>
+</html>

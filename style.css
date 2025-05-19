@@ -1,0 +1,484 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/* ---------- RESET ---------- */
+*{margin:0;padding:0;box-sizing:border-box;list-style:none;text-decoration:none}
+body{
+  font-family:'Poppins',sans-serif;
+  background:#e6f2ff;          /* azul suave para todo el cuerpo */
+}
+
+/* ---------- CONTENEDOR ---------- */
+.container{max-width:1200px;margin:0 auto;padding:0 15px}
+
+/* ---------- HEADER ---------- */
+.header{
+  background:#1b293a;height:80px;width:100%;position:fixed;
+  top:0;left:0;z-index:1000;display:flex;align-items:center
+}
+.menu{width:100%;display:flex;align-items:center;justify-content:space-between}
+.logo{color:#fffdfc;font-size:25px;font-weight:800;display:flex;align-items:center}
+.logo-img{width:32px;margin-right:8px}
+
+/* ---------- HAMBURGUESA ---------- */
+.hamburguer{cursor:pointer;display:none;flex-direction:column;gap:6px;width:28px}
+.hamburguer span{height:4px;width:100%;background:#fffdfc;display:block}
+
+/* ---------- NAVBAR ---------- */
+.navbar ul{display:flex;align-items:center}
+.navbar ul li{flex:0 0 auto}
+.navbar ul li a,
+.drop summary{
+  padding:20px 30px;font-size:16px;font-weight:600;
+  color:#fffdfc;transition:.3s;cursor:pointer
+}
+.navbar ul li a:hover,
+.drop summary:hover{background:#fffdfc;color:#1b293a}
+
+/* ---------- DROP / SUBMENÚ ---------- */
+.drop{position:relative; z-index:1010;}      /* asegura superposición correcta */
+.drop summary{
+  display:block;                              /* mismo comportamiento que <a> */
+  padding:20px 30px;
+}
+.drop summary::-webkit-details-marker{display:none;}
+.drop summary::marker{content:"";}
+
+.drop details>.dropdown{display:none}
+.drop details[open]>.dropdown{display:flex}
+
+.dropdown{
+  position:absolute;top:100%;left:0;background:#1b293a;
+  flex-direction:column;min-width:240px;
+  box-shadow:0 4px 10px rgba(0,0,0,.15);
+}
+.dropdown li a{padding:15px 25px;white-space:nowrap}
+
+/* ---------- HERO ---------- */
+.hero{
+  background:url(images/intae.jpg) center/cover no-repeat;
+  min-height:60vh;display:flex;align-items:center;
+  text-align:center;padding-top:80px;justify-content:center;
+  padding-bottom:25px;
+}
+.hero h1{
+  font-size:60px;text-transform:uppercase;margin-bottom:10px;
+  color:#001a57;                /* azul oscuro */
+}
+.hero p{
+  font-size:20px;margin-bottom:25px;
+  color:black;                /* rojo oscuro */
+  font-weight:700;              /* negrita */
+}
+.btn-cta{
+  display:inline-block;background:#fffdfc;color:#1b293a;
+  padding:12px 35px;font-weight:600;text-transform:uppercase
+}
+.btn-cta:hover{background:#1b293a;color:#fffdfc;border:1px solid #fffdfc}
+
+/* ---------- SECCIONES COMUNES ---------- */
+section{padding:70px 0;text-align:center}
+section .container{
+  background:#ffffff;border-radius:20px;padding:60px 30px;
+  box-shadow:0 4px 12px rgba(0,0,0,.08)
+}
+.hero .container{background:transparent;box-shadow:none;padding-top:100px}
+
+h2{text-transform:uppercase;font-size:40px;color:#1b293a;margin-bottom:40px}
+
+/* ---------- CARDS ---------- */
+.cards{display:flex;flex-wrap:wrap;gap:25px;justify-content:center}
+.card{
+  background:#f5f5f5;border-radius:12px;padding:25px;flex:1 1 240px;
+  max-width:260px
+}
+.card h3{font-size:18px;color:#1b293a;margin-bottom:12px}
+.card p{font-size:15px;color:#555}
+
+/* Benefits list */
+.benefits-list{display:grid;gap:10px;font-size:17px;max-width:600px;margin:0 auto;color:#1b293a}
+
+/* Testimonios */
+.testimonial img{width:80px;height:80px;border-radius:50%;margin-bottom:15px}
+.testimonial span{display:block;margin-top:10px;font-size:14px;color:#1b293a}
+
+/* Contacto */
+.contacto a{color:#1b293a;text-decoration:underline}
+
+/* ---------- RESPONSIVE ---------- */
+#menu-toggle{display:none}
+@media(max-width:768px){
+  .hamburguer{display:flex}
+  .navbar{
+    position:fixed;top:80px;right:-100%;width:200px;
+    height:calc(100% - 80px);background:#1b293a;
+    flex-direction:column;padding-top:20px;transition:.3s
+  }
+  .navbar ul{flex-direction:column}
+  .navbar ul li a,
+  .drop summary{padding:15px 20px}
+  #menu-toggle:checked~.navbar{right:0}
+
+  /* dropdown dentro del menú móvil se vuelve estático */
+  .dropdown{position:static;box-shadow:none;min-width:100%;}
+}
+
+/* ---------- CARD IMAGES ---------- */
+.card-img{
+    width:50%;
+    height:100px;           /* alto fijo para uniformidad */
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:15px;
+  }
+  
+/* =========================================================
+   LISTA VERTICAL DE CLASES  (clases.html)
+   ========================================================= */
+
+   .class-list{
+    display:flex;
+    flex-direction:column;
+    gap:25px;                    /* separación entre tarjetas */
+  }
+  
+  /* ---------- Tarjeta básica ---------- */
+  .class-card{
+    background:#f5f5f5;
+    border-radius:12px;
+    padding:18px 25px;
+    box-shadow:0 4px 10px rgba(0,0,0,.06);
+    transition:.3s transform, .3s box-shadow;
+  }
+  
+  .class-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+  }
+  
+  /* ---------- Encabezado flexible ---------- */
+  .class-card header{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    cursor:pointer;              /* todo el header es clickeable */
+  }
+  
+  .class-icon{
+    width:46px;
+    flex:0 0 46px;
+  }
+  
+  .class-card h3{
+    font-size:18px;
+    color:#1b293a;
+    font-weight:600;
+  }
+  
+  /* ---------- Botón + / − ---------- */
+  .acc-toggle{
+    margin-left:auto;            /* lo empuja al extremo derecho */
+    background:none;
+    border:0;
+    font-size:28px;
+    line-height:1;
+    color:#1b293a;
+    cursor:pointer;
+  }
+  
+  /* ---------- Cuerpo colapsable ---------- */
+  .acc-body{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .35s ease;
+    margin-top:0;                /* sin espacio cuando está cerrado */
+    color:#555;
+    font-size:15px;
+  }
+  
+  .acc.open .acc-body{
+    max-height:300px;            /* o el valor que necesites */
+    margin-top:10px;
+  }
+
+  .cards .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .cards .card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  }
+  
+  .cards .card:hover h3 {
+    color: #0055aa; /* un azul llamativo */
+  }
+
+  .cards .card img {
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .cards .card:hover img {
+    transform: scale(1.1);
+  }
+  
+  .benefits-list {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .benefits-list li {
+    background: #f9f9f9;
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    position: relative;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: default;
+  }
+  
+  .benefits-list li:hover {
+    background-color: #0055aa;
+    color: white;
+  }
+  
+  .benefits-list li::before {
+    content: "✔";  /* Puedes cambiar por otro icono o emoji */
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #0055aa;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  .benefits-list li:hover::before {
+    color: white;
+  }
+
+  .benefits-list li {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  .benefits-list li.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .contacto form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 400px;
+  }
+  
+  .contacto label {
+    font-weight: 600;
+  }
+  
+  .contacto input,
+  .contacto textarea {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    resize: vertical;
+  }
+  
+  .contacto button.btn-cta {
+    background-color: #0066ff;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contacto button.btn-cta:hover {
+    background-color: #004ecc;
+  }
+  
+  .contacto .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Opcional: centra verticalmente si el contenedor tiene altura */
+    padding: 40px 20px;
+    min-height: 300px; /* Puedes ajustar la altura mínima para mejor centrado vertical */
+  }
+  
+  .contacto form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 400px; /* Limita el ancho */
+  }
+  /* ---------- HERO PEQUEÑO (paginas internas) ---------- */
+.hero-small {
+    min-height: 40vh;
+    background: #1b293a;          /* mismo azul del header */
+    display: flex;
+    align-items: center;
+    color: #fffdfc;
+    text-align: center;
+    padding-top: 80px;            /* espacio bajo el navbar fijo */
+  }
+  
+  /* ---------- FLIP CARDS ---------- */
+  .flip-grid {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    justify-items: center;
+    margin-top: 40px;
+  }
+  
+  .flip-card {
+    perspective: 1000px;
+    width: 100%;
+    max-width: 260px;
+    height: 320px;
+  }
+  
+  .flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform .6s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card:hover .flip-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-front, .flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 16px;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,.1);
+  }
+  
+  .flip-front {
+    background: #f5f5f5;
+  }
+  
+  .flip-back {
+    background: #1b293a;
+    color: #fffdfc;
+    transform: rotateY(180deg);
+  }
+  
+  .flip-front img {
+    width: 64px;
+    margin-bottom: 15px;
+  }
+  
+  .flip-front h3 {
+    font-size: 18px;
+    color: #1b293a;
+  }
+  
+  /* ---------- FOOTER MINI ---------- */
+  .footer-mini {
+    background: #1b293a;
+    color: #fffdfc;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 60px;
+  }
+  
+  /* ---------- SOCIAL CARDS ---------- */
+.social-grid{
+    display:grid;
+    gap:25px;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    justify-items:center;
+    margin-top:40px;
+  }
+  
+  .social-card{
+    width:100%;
+    max-width:220px;
+    height:220px;
+    border-radius:18px;
+    background:#f5f5f5;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    transition:transform .3s, box-shadow .3s;
+  }
+  
+  .social-card img{
+    width:64px;
+    margin-bottom:15px;
+  }
+  
+  .social-card span{
+    font-size:18px;
+    font-weight:600;
+    color:#1b293a;
+  }
+  
+  /* Colores de cada red al hacer hover */
+  .social-card.facebook:hover{background:#1877f2;box-shadow:0 8px 16px rgba(24,119,242,.4);transform:translateY(-6px)}
+  .social-card.instagram:hover{background:#e1306c;box-shadow:0 8px 16px rgba(225,48,108,.4);transform:translateY(-6px)}
+  .social-card.youtube:hover{background:#ff0000;box-shadow:0 8px 16px rgba(255,0,0,.4);transform:translateY(-6px)}
+  .social-card.tiktok:hover{background:#010101;box-shadow:0 8px 16px rgba(1,1,1,.4);transform:translateY(-6px)}
+  
+  .social-card.facebook:hover span,
+  .social-card.instagram:hover span,
+  .social-card.youtube:hover span,
+  .social-card.tiktok:hover span,
+  .social-card.facebook:hover img,
+  .social-card.instagram:hover img,
+  .social-card.youtube:hover img,
+  .social-card.tiktok:hover img{
+    filter:invert(1) brightness(2);
+  }
+  
+  /* ---------- BOTÓN WHATSAPP ---------- */
+  .btn-whatsapp{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:#25d366;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 4px 12px rgba(0,0,0,.25);
+    transition:transform .3s;
+    z-index:1200;
+  }
+  .btn-whatsapp img{width:34px;height:34px;filter:invert(1)}
+  .btn-whatsapp:hover{transform:scale(1.1)}
+  
